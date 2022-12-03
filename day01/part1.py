@@ -16,6 +16,7 @@ def main():
                 calorie_count = 0
             else:
                 calorie_count += int(line.replace("\n", ""))
+        max_calorie_count = max(max_calorie_count, calorie_count)
     
     print(max_calorie_count)
 
