@@ -8,18 +8,21 @@
 # non-repeating characters occurs (inclusive of the four
 # # chancarcter)
 
-def main():
-    input_fname = "input.txt"
-    # input_fname = "test_input.txt"
+def num_char_before_distinct(input_fname, num_distinct):
     with open(input_fname) as file:
         for line in file:            
-            end = 4
-            for end in range(4, len(line)):
-                if len(set(line[end - 4:end])) == len(line[end - 4:end]):
+            end = num_distinct
+            for end in range(num_distinct, len(line)):
+                if (len(set(line[end - num_distinct:end]))
+                    == len(line[end - num_distinct:end])):
                     break
         
             print(len(line[:end]))
 
+def main():
+    input_fname = "input.txt"
+    # input_fname = "test_input.txt"
+    num_char_before_distinct(input_fname, 4)
+
 if __name__ == "__main__":
     main()
-    
