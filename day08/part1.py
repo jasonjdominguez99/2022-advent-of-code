@@ -7,12 +7,7 @@
 # from outside a grid of trees, given the trees heights
 # from 0 (shortest) to 9 (tallest)
 
-def get_idx(row_num, col_num, width):
-    return row_num*width + col_num
-
-def main():
-    input_fname = "input.txt"
-    # input_fname = "test_input.txt"
+def get_trees(input_fname):
     trees = []
     width = 0
     depth = 0
@@ -29,7 +24,16 @@ def main():
                 trees.append(int(tree))
             
             depth += 1
+            
+    return trees, width, depth
 
+def get_idx(row_num, col_num, width):
+    return row_num*width + col_num
+
+def main():
+    input_fname = "input.txt"
+    # input_fname = "test_input.txt"
+    trees, width, depth = get_trees(input_fname)
     number_visible = 2*width + 2*depth - 4
     
     for i in range(1, width - 1):
