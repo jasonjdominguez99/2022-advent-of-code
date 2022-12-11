@@ -39,6 +39,7 @@ def main():
     for i in range(1, width - 1):
         row_start = get_idx(i, 0, width)
         row_end = get_idx(i, width - 1, width)
+        
         for j in range(1, depth - 1):
             col_start = get_idx(0, j, width)
             col_end = get_idx(depth - 1, j, width)
